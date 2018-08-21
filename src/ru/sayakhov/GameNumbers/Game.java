@@ -1,8 +1,7 @@
 package ru.sayakhov.GameNumbers;
-import java.net.PasswordAuthentication;
+
 import java.util.Random;
 import java.util.Scanner;
-
 
 
 public class Game {
@@ -14,11 +13,8 @@ public class Game {
 
 		System.out.println("We have 3 levels. \n1-st Easy (from 1 - to 100). \n2-nd Normal (from -100 - to 100).  \n3-d Hard (from -1000 - to 1000)");
 		System.out.println();
-
-		// можно добавить попытку на то чтоб угадать число
-		// реализовать фичу тепло холодно
-		Game.chooseLevel(); //запуск метода
-	} //привествие и запуск
+		Game.chooseLevel(); //запуск выбора уровня
+	}
 
 	public static int chooseLevel() {
 		System.out.println("Please  chouse your skill power and type integer: 1 \"Easy\", 2 \"Normal\" or 3 \"Hard\"");
@@ -55,24 +51,24 @@ public class Game {
 			int Low = 1;
 			int High = 100;
 			int Result = r.nextInt(High - Low) + Low;
-			System.out.println(Result+"You are playing Easy level (from 1 - to 100)");
+			System.out.println("You are playing Easy level (from 1 - to 100)");
 			return Result;
 		} else if (a == 2) {
 			Random r = new Random();
 			int Low = -100;
 			int High = 100;
 			int Result = r.nextInt(High - Low) + Low;
-			System.out.println(Result+"You are playing Normal level (from -100 - to 100)");
+			System.out.println("You are playing Normal level (from -100 - to 100)");
 			return Result;
 		} else {
 			Random r = new Random();
 			int Low = -1000;
 			int High = 1000;
 			int Result = r.nextInt(High - Low) + Low;
-			System.out.println(Result+"You are playing Hard level (from -1000 - to 1000)");
+			System.out.println("You are playing Hard level (from -1000 - to 1000)");
 			return Result;
 		}
-	}   //загадываю число
+	}   //загадываю число в зависимости от уровня
 
 	private static void HotCold(int enigma) {
 		int answer = 0;
@@ -98,5 +94,5 @@ public class Game {
 				System.out.println("Please type only integer numbers");
 			}
 		}
-	}
+	} // Метод угадывания числа
 }
