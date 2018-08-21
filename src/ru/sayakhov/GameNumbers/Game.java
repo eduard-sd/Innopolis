@@ -72,6 +72,8 @@ public class Game {
 
 	private static void HotCold(int enigma) {
 		int answer = 0;
+		int lastAnswer = 0;
+		int newAnswer = 0;
 		while (answer != enigma) {
 			Scanner scanner = new Scanner(System.in);
 			if (scanner.hasNextInt()) {
@@ -80,18 +82,30 @@ public class Game {
 					System.out.println("You win, great job!");
 					answer = enigma;
 				} else {
-					System.out.println("Wrong answer, try again");
-					if (answer < enigma){
+					newAnswer = Math.abs(enigma - answer) ;
+
+					if (newAnswer < lastAnswer ){
+						System.out.println("Hotter.");
+						System.out.println("For exit game type \"EXIT\" \n");
+					}else {
+						System.out.println("Colder.");
+						System.out.println("For exit game type \"EXIT\" \n");
+
+					/*
+					if (answer < enigma ){
 						System.out.println("Try the higher number");
 						System.out.println();
 
 					}else if (answer > enigma){
 						System.out.println("Try the below number");
-						System.out.println();
+						System.out.println();*/
 					}
+					lastAnswer = Math.abs(enigma - answer);
 				}
-			} else {
-				System.out.println("Please type only integer numbers");
+			} else if(scanner.hasNext("EXIT")) {
+			break;
+			}	else {
+				System.out.println("Please type only integer numbers. For exit game type \"EXIT\"");
 			}
 		}
 	} // Метод угадывания числа
