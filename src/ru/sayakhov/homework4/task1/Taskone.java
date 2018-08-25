@@ -1,4 +1,4 @@
-package ru.sayakhov.lesson4_loops.task1;
+package ru.sayakhov.homework4.task1;
 
 import java.util.Arrays;
 import java.util.Scanner;
